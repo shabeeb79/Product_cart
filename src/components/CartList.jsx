@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RemoveCart } from './Cart'
+import Navbar from './Navbar'
 
 const CartList = () => {
     const cart = useSelector((state) => state.cart)
@@ -11,6 +12,8 @@ const CartList = () => {
     }
 
     return (
+        <>
+        <Navbar/>
         <div className="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {cart.map((item) => (
                 <div
@@ -30,6 +33,7 @@ const CartList = () => {
                 </div>
             ))}
         </div>
+        </>
     )
 }
 

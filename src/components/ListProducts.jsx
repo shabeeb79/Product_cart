@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FetchProducts } from './ProductFetch';
 import { AddCart } from './Cart';
 import { useNavigate } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const ListProducts = () => {
   const navigate = useNavigate();
@@ -17,6 +18,8 @@ const ListProducts = () => {
   if (error) return <div className="text-center mt-10 text-red-500">{error}</div>;
 
   return (
+    <div>
+    <Navbar/>
     <div className="max-w-6xl mx-auto p-6">
       <h2 className="text-4xl font-extrabold mb-8 text-center text-gradient bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
         Products
@@ -54,6 +57,7 @@ const ListProducts = () => {
         </button>
       </div>
     </div>
+ </div>
   );
 };
 
